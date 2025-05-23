@@ -19,5 +19,6 @@ variable "db_username" {
 variable "db_password" {
   description = "Master password for the PostgreSQL RDS instance"
   type        = string
+  default     = "strongPassworD!"
   sensitive   = true
 }
