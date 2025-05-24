@@ -1,9 +1,29 @@
 resource "aws_db_subnet_group" "main" {
   name       = "fiap-tc03-subnet"
-  subnet_ids = terraform_remote_state.k8s.outputs.subnet_ids
+  subnet_ids = data.terraform_remote_state.k8s.outputs.subnet_ids
   
   tags = {
     Name = "RdsSubnetGroup"
+  }
+}
+
+resource "aws_security_group" "rds_sg" {
+  name        = "rds-sg"
+  description = "Allow PostgreSQL access"
+  vpc_id      = data.terraform_remote_state.k8s.outputs.vpc_id
+
+  ingress {
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -16,10 +36,10 @@ resource "aws_db_instance" "postgres" {
   username                = var.db_username
   password                = var.db_password
   db_subnet_group_name    = aws_db_subnet_group.main.name
-  vpc_security_group_ids  = [data.terraform_remote_state.k8s.outputs.sg_id]
+  vpc_security_group_ids  = [aws_security_group.rds_sg.id]
   publicly_accessible     = true
   skip_final_snapshot     = true
-  identifier              = "fastfood_10soat_g22_tc3"
+  identifier              = "fastfood-10soat-g22-tc3"
   backup_retention_period = 7  
   multi_az                = false
   storage_type            = "gp3"
