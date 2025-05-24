@@ -17,12 +17,6 @@ Repository for the [FIAP](https://postech.fiap.com.br/) Tech Challenge 3, where 
 > [!NOTE]
 > Tech Challenge 3 API repository can be found [here](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api)  
 
-
-## 🏗️ Architecture
-
-### :cloud: AWS
-![AWS EKS](docs/tc3-aws-eks.png)
-
 ## :computer: Technologies
 
 - [Terraform](https://www.terraform.io/)
