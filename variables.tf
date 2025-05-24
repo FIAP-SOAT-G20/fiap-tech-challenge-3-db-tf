@@ -4,12 +4,6 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "vpc_name" {
-  description = "Name tag for the VPC"
-  type        = string
-  default     = "my-vpc"
-}
-
 variable "db_username" {
   description = "Master username for the PostgreSQL RDS instance"
   type        = string
