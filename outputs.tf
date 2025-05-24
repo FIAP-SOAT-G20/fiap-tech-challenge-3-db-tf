@@ -1,6 +1,6 @@
 output "rds_endpoint" {
   description = "DNS endpoint do RDS"
-  value       = aws_db_instance.postgres.endpoint
+  value       = aws_db_instance.postgres.address
 }
 
 output "rds_username" {
