@@ -24,10 +24,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{ env.REGION_DEFAULT }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Terraform Setup
         uses: hashicorp/setup-terraform@v3
+
+      - name: Set Terraform environment variables
+        run: |
+          echo "TF_VAR_db_username=${{ secrets.DB_USERNAME }}" >> $GITHUB_ENV
+          echo "TF_VAR_db_password=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
 
       - name: Terraform Format
         id: fmt

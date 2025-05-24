@@ -13,12 +13,10 @@ variable "vpc_name" {
 variable "db_username" {
   description = "Master username for the PostgreSQL RDS instance"
   type        = string
-  default     = "pguser"
 }
 
 variable "db_password" {
   description = "Master password for the PostgreSQL RDS instance"
   type        = string
-  default     = "strongPassworD!"
   sensitive   = true
 }
