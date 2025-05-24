@@ -52,9 +52,6 @@ Place the variable values ​​in the `terraform.tfvars` file and run the follo
 make tf-init
 ```
 ```bash
-make tf-init
-```
-```bash
 make tf-plan
 ```
 ```bash
