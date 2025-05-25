@@ -17,6 +17,12 @@ Repository for the [FIAP](https://postech.fiap.com.br/) Tech Challenge 3, where 
 > [!NOTE]
 > Tech Challenge 3 API repository can be found [here](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api)  
 
+## :bulb: Motivation
+
+A relational database was chosen as the optimal solution for this project based on our requirements analysis, which indicated that the data structure would remain relatively stable over time.
+
+For the specific database selection, we evaluated PostgreSQL and MySQL as potential candidates. PostgreSQL was ultimately selected based on the team's technical expertise and familiarity with the platform. This decision was further supported by the fact that both options had comparable cloud deployment costs, making PostgreSQL the most efficient choice for our needs.
+
 ## :computer: Technologies
 
 - [Terraform](https://www.terraform.io/)
