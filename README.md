@@ -37,6 +37,12 @@ For the specific database selection, we evaluated PostgreSQL and MySQL as potent
   <img src="docs/architecture.png" alt="Architecture Diagram" width="800"/>
 </p>
 
+### Database Schema
+
+<p align="center">
+  <img src="docs/diagram-db.png" alt="Database UML Diagram" width="800"/>
+</p>
+
 ## :computer: Technologies
 
 - [Terraform](https://www.terraform.io/)
