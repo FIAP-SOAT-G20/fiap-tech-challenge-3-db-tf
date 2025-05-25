@@ -23,6 +23,12 @@ A relational database was chosen as the optimal solution for this project based 
 
 For the specific database selection, we evaluated PostgreSQL and MySQL as potential candidates. PostgreSQL was ultimately selected based on the team's technical expertise and familiarity with the platform. This decision was further supported by the fact that both options had comparable cloud deployment costs, making PostgreSQL the most efficient choice for our needs.
 
+## :art: Architecture
+
+<p align="center">
+  <img src="docs/architecture.png" alt="Architecture Diagram" width="800"/>
+</p>
+
 ## :computer: Technologies
 
 - [Terraform](https://www.terraform.io/)
